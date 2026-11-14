@@ -11,16 +11,16 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "prixy | your personal presence proxy" },
+      { title: "heyphony | a phone number for your ai agent" },
       {
         name: "description",
         content:
-          "prixy goes to the meeting, event, or session and brings back exactly what you needed.",
+          "heyphony gives an ai agent an ordinary phone number, with a self-hosted inbox for texts, calls, and voicemail.",
       },
-      { property: "og:title", content: "prixy | your personal presence proxy" },
+      { property: "og:title", content: "heyphony | a phone number for your ai agent" },
       {
         property: "og:description",
-        content: "you don't always need a meeting summary. sometimes you need someone to go.",
+        content: "ordinary telephony, adapted for autonomous agents and hosted on infrastructure you control.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,51 +32,48 @@ export const Route = createFileRoute("/")({
 const theLoop = [
   {
     marker: "01",
-    title: "register",
-    description: "handles sign-up and pre-registration when a session requires it.",
+    title: "choose a number",
+    description: "bring a compatible did from a telephone provider you already trust.",
   },
   {
     marker: "02",
-    title: "attend",
-    description: "joins the supported call as your delegated presence at the right time.",
+    title: "register the host",
+    description: "keep the sip registration and long-lived credentials on a persistent machine.",
   },
   {
     marker: "03",
-    title: "listen",
-    description: "follows the session against the specific goal you gave it.",
+    title: "catch the texts",
+    description: "receive provider webhooks or carrier email and normalize them into one local inbox.",
   },
   {
     marker: "04",
-    title: "ask",
-    description: "raises your prepared questions when the moment is appropriate.",
+    title: "read the calls",
+    description: "inspect call history, missed calls, threads, and voicemail through agent-friendly views.",
   },
   {
     marker: "05",
-    title: "retrieve",
-    description: "captures the decision, price, date, code, or answer you asked for.",
+    title: "give it tools",
+    description: "use the cli, local browser interface, or the mcp branch's structured agent tools.",
   },
   {
     marker: "06",
-    title: "return",
-    description: "sends back the answer, and keeps the transcript if you want the full context.",
+    title: "act deliberately",
+    description: "outbound messages stay behind explicit permission gates, one recipient at a time.",
   },
 ];
 
 const notThese = [
   {
-    title: "not a meeting summariser.",
-    description:
-      "a summary explains a room you were already in. prixy is for rooms you never entered.",
+    title: "not a campaign dialer.",
+    description: "one number, one agent, one message at a time. no bulk lists, retries, or sales queues.",
   },
   {
-    title: "not a corporate notetaker.",
-    description:
-      "it is your personal instance with your instructions, not a bot invited to every calendar event.",
+    title: "not a hosted phone service.",
+    description: "the number and carrier account remain yours. the toolkit runs on a host you control.",
   },
   {
-    title: "not another inbox.",
-    description:
-      "you get the specific thing you asked for. the source material stays available but optional.",
+    title: "not a finished voice personality.",
+    description: "the baseline connects communication rails; it does not pretend every conversation is autonomous.",
   },
 ];
 
@@ -86,55 +83,56 @@ function Index() {
       <MetaRow
         fields={[
           { label: "document", value: "index" },
-          { label: "type", value: "personal presence proxy" },
+          { label: "type", value: "agent phone toolkit" },
           { label: "issue", value: "001" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "source-available" },
         ]}
       />
 
       <BriefNote>
-        prixy is a personal ai proxy that can show up to things on your behalf and bring back exactly
-        what you needed. this document explains what it does, why it exists, and what it can join.
+        heyphony is a self-hosted, cli-first toolkit for giving your ai agent a phone number of its
+        own. it brings texts, call history, and voicemail into a local, agent-readable workflow.
       </BriefNote>
 
-      <StripLabel>the proxy</StripLabel>
+      <StripLabel>the phone number</StripLabel>
 
       <BigHeading>
-        you don&apos;t need
+        your agent
         <br />
-        a recap.
+        can chat.
         <br />
-        you need
+        now it can
         <br />
-        someone to go.
+        be called.
       </BigHeading>
 
       <StripLabel>introduction</StripLabel>
       <div className="grid grid-cols-1 gap-6 border-x border-b border-primary px-4 py-6 md:grid-cols-2">
         <p className="text-base leading-relaxed">
-          tell prixy where to go and what you need from it. it handles the presence, then returns the
-          answer.
+          connect an ordinary provider-owned number to a persistent host, then expose its messages
+          and calls through commands and structured data.
         </p>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          being somewhere and knowing something are two different things. prixy separates them, so an
-          hour of attendance can become one line of information.
+          no agent-only phone network. no new communications protocol. just the existing telephone
+          system, adapted around the way an autonomous agent actually works.
         </p>
       </div>
 
-      <DocBox label="the presence loop">
+      <DocBox label="the number loop">
         <CellGrid items={theLoop} />
       </DocBox>
 
-      <DocBox label="what prixy is not">
+      <DocBox label="what heyphony is not">
         <CellGrid items={notThese} />
       </DocBox>
 
-      <DocBox label="one request in, one answer out" filled>
+      <DocBox label="one number, one local view" filled>
         <p className="text-lg leading-snug">
-          &ldquo;go to this event and find the promo code they announce during the live session.&rdquo;
+          a text arrives at the carrier. the catcher normalizes it. the local inbox deduplicates it.
+          your agent reads the thread and decides what, if anything, should happen next.
         </p>
         <p className="mt-4 font-display text-4xl font-black uppercase tracking-tight">
-          promo code: example20
+          text · call · voicemail
         </p>
       </DocBox>
 
@@ -149,13 +147,13 @@ function Index() {
           to="/features/supports"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          what it can join
+          provider coverage
         </Link>
         <Link
-          to="/purpose"
+          to="/philosophy"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          why it exists
+          why existing telecom
         </Link>
       </div>
     </div>

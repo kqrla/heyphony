@@ -12,16 +12,16 @@ import {
 export const Route = createFileRoute("/features/capabilities")({
   head: () => ({
     meta: [
-      { title: "capabilities | what prixy can actually do" },
+      { title: "capabilities | inside heyphony" },
       {
         name: "description",
         content:
-          "a detailed capability sheet covering registration, attendance, listening, asking, retrieval, and retention.",
+          "a detailed heyphony capability sheet covering setup, inbound communication, local views, and explicitly gated outbound actions.",
       },
-      { property: "og:title", content: "capabilities | what prixy can actually do" },
+      { property: "og:title", content: "capabilities | inside heyphony" },
       {
         property: "og:description",
-        content: "the detailed capability sheet for a personal presence proxy.",
+        content: "what the main branch and named experimental branches actually implement.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,87 +30,87 @@ export const Route = createFileRoute("/features/capabilities")({
   component: CapabilitiesPage,
 });
 
-const beforeSession = [
+const setup = [
   {
-    title: "registration",
+    title: "choose a provider and did",
     description:
-      "fills in the registration form on platforms like luma or eventbrite, handles confirmation steps, and stores the resulting join link.",
+      "start with a carrier account and a compatible number. provider capabilities differ across voice registration, trunking, sms, and email delivery.",
   },
   {
-    title: "link sourcing",
+    title: "prepare the sip client",
     description:
-      "finds the join url wherever it lives: calendar sync, a connected inbox, a discord or slack channel, or a forum thread watched during the event window.",
+      "main writes linphone configuration and reads its databases. later calling branches choose baresip for socket control and audio experiments.",
   },
   {
-    title: "scheduling",
+    title: "make inbound delivery reachable",
     description:
-      "resolves the correct start time across timezones and reserves the slot, including a configurable join delay so prixy arrives after the host opens the room.",
+      "configure a provider webhook to an awake public host or tunnel, or use an appropriate carrier-email route where supported.",
   },
   {
-    title: "briefing",
+    title: "run doctor and prove delivery",
     description:
-      "takes your goal, keywords to watch, and prepared questions as the instruction set for that specific session.",
-  },
-];
-
-const duringSession = [
-  {
-    title: "joins as you",
-    description:
-      "enters with the profile and display identity you selected for that room, camera off and mic off, handling waiting rooms and passcodes.",
-  },
-  {
-    title: "goal-aware listening",
-    description:
-      "checks every live transcript chunk against your capture requests. keyword matches are saved immediately, with who said it, when, and the surrounding sentence.",
-  },
-  {
-    title: "chat monitoring",
-    description:
-      "watches meeting chat in real time for links, access codes, and form urls, and captures them as they appear.",
-  },
-  {
-    title: "asks and follows up",
-    description:
-      "raises prepared questions at an appropriate moment and pushes once if the answer is vague.",
-  },
-  {
-    title: "marks attendance",
-    description:
-      "sends a presence message in chat, fills out an attendance form, or follows a custom method you define.",
-  },
-  {
-    title: "handles breakout rooms",
-    description:
-      "auto-accepts breakout invites, joins a specific room you named, or stays in the main session.",
+      "inspect configuration, then send a real text or place a real call. installation alone does not prove carrier routing, media, or credentials.",
   },
 ];
 
-const afterSession = [
+const inbound = [
   {
-    title: "the short answer",
+    title: "normalized messages",
     description:
-      "the requested detail arrives first, in one line, without a wall of surrounding context.",
+      "json, form, and query-string deliveries become common records with sender, recipient, body, timestamps, and the raw provider payload.",
   },
   {
-    title: "honest gaps",
+    title: "deduplication and read state",
     description:
-      "if the information never surfaced, prixy says so instead of inventing a plausible answer.",
+      "provider ids prevent repeated deliveries from multiplying messages; separate read marks keep viewing state explicit.",
   },
   {
-    title: "diarized transcript",
+    title: "threads and missed calls",
     description:
-      "the full transcript comes back with speaker labels, so you can see who said what, not just what was said.",
+      "local views group communication into threads and expose missed calls, messages, voicemail, and call history.",
   },
   {
-    title: "hinglish readable",
+    title: "carrier email import",
     description:
-      "when speakers mix hindi and english, the transcript stays in latin script, phonetically written, so you read it without switching scripts.",
+      "parse supported carrier email, retain message content, and import attachments such as voicemail audio into the local workflow.",
   },
   {
-    title: "optional source",
+    title: "read-only call history",
     description:
-      "transcripts and materials stay available for inspection and are deletable at any time.",
+      "the linphone sqlite databases are opened read-only so the toolkit can inspect history without treating the client's database as its own write store.",
+  },
+  {
+    title: "live voice + text timeline",
+    description:
+      "on mcp, concurrent sip events and http messages enter one sequenced in-memory timeline for the running session.",
+  },
+];
+
+const outbound = [
+  {
+    title: "single-recipient sms",
+    description:
+      "main includes http adapters for voip.ms, flowroute, and signalwire. sending requires both the environment opt-in and explicit send authorization.",
+  },
+  {
+    title: "sender allow policy",
+    description:
+      "the allow branch evaluates explicit numbers, home country, or selected countries, defaults closed, and persists refusal records.",
+  },
+  {
+    title: "outbound call tasks",
+    description:
+      "callheavy adds baresip control, local audio pumping, and an optional call-e rail. its strongest proof is a local loopback audio test, not universal carrier verification.",
+  },
+  {
+    title: "voicemail worker",
+    description:
+      "generated livekit agents and openai tts worker code exists, but the baseline still has authorization and separately-running-agent gaps. it is not one-command voicemail delivery.",
+  },
+  {
+    title: "mcp outward tools",
+    description:
+      "the mcp branch describes twelve read-only tools and three outward-facing tools over local stdio, not a hosted https api.",
   },
 ];
 
@@ -122,32 +122,32 @@ function CapabilitiesPage() {
           { label: "document", value: "capabilities" },
           { label: "parent", value: "features" },
           { label: "issue", value: "001" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "implementation-led" },
         ]}
       />
 
       <BriefNote>
-        capabilities are grouped by when they happen: before the session, during it, and after it.
-        the split matters because each stage has different failure modes.
+        capabilities are grouped by setup, inbound work, and outward action. each stage has different
+        dependencies and different proof requirements.
       </BriefNote>
 
       <StripLabel>capabilities</StripLabel>
       <BigHeading>
-        what it
+        receive first.
         <br />
-        can do.
+        act second.
       </BigHeading>
 
-      <DocBox label="before the session">
-        <NumberedList items={beforeSession} />
+      <DocBox label="number and host setup">
+        <NumberedList items={setup} />
       </DocBox>
 
-      <DocBox label="during the session">
-        <CellGrid items={duringSession} columns={2} />
+      <DocBox label="inbound and local context">
+        <CellGrid items={inbound} columns={2} />
       </DocBox>
 
-      <DocBox label="after the session">
-        <NumberedList items={afterSession} />
+      <DocBox label="outbound and agent action">
+        <NumberedList items={outbound} />
       </DocBox>
 
       <div className="flex flex-wrap gap-4 border-x border-b border-primary px-4 py-4">
@@ -161,7 +161,7 @@ function CapabilitiesPage() {
           to="/features/supports"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          supported platforms
+          provider coverage
         </Link>
       </div>
     </div>

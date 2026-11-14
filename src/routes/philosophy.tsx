@@ -13,16 +13,16 @@ import {
 export const Route = createFileRoute("/philosophy")({
   head: () => ({
     meta: [
-      { title: "philosophy | presence is expensive" },
+      { title: "philosophy | ai adapted, not ai native" },
       {
         name: "description",
         content:
-          "prixy separates being somewhere from knowing something, and treats attention as the scarce resource.",
+          "heyphony adapts battle-tested telecom infrastructure for autonomous ai agents instead of inventing an agent-only network.",
       },
-      { property: "og:title", content: "philosophy | presence is expensive" },
+      { property: "og:title", content: "philosophy | ai adapted, not ai native" },
       {
         property: "og:description",
-        content: "being somewhere and knowing something are two different things.",
+        content: "ordinary telephone infrastructure, adopted and augmented for autonomous ai agents.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,19 +33,29 @@ export const Route = createFileRoute("/philosophy")({
 
 const principles = [
   {
-    title: "attendance is a cost, not a value",
+    title: "use the network that already exists",
     description:
-      "an hour spent in a call is an hour spent. the information is the value, and it rarely needs the hour.",
+      "carriers, phone numbers, sip registration, webhooks, and voicemail already solve hard problems. heyphony adapts them rather than replacing them.",
   },
   {
-    title: "more output is not more help",
+    title: "one number, one agent",
     description:
-      "summaries, recaps, highlights and action items can each become another thing to process.",
+      "a stable identity is easier to reason about than a pool of disposable numbers. the unit of design is one agent's ordinary telephone presence.",
   },
   {
-    title: "the stated need comes first",
+    title: "inbound before outbound",
     description:
-      "if you already know what you need, the correct answer is that thing, not general coverage of everything said.",
+      "reading texts, calls, and voicemail comes first. sending is explicit, gated, and deliberately narrow instead of becoming a campaign engine.",
+  },
+  {
+    title: "keep credentials on the host",
+    description:
+      "long-lived provider and sip credentials belong on a persistent machine, not inside an ephemeral agent session or a public web page.",
+  },
+  {
+    title: "name the unfinished edges",
+    description:
+      "implemented code, local proofs, carrier verification, and future designs are different states. the documentation keeps them separate.",
   },
 ];
 
@@ -57,34 +67,32 @@ function PhilosophyPage() {
           { label: "document", value: "philosophy" },
           { label: "type", value: "position" },
           { label: "issue", value: "005" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "ai adapted" },
         ]}
       />
 
       <BriefNote>
-        position sheet. the reasoning behind the anti-recap stance, kept separate from features.
+        position sheet. why heyphony builds around telephone infrastructure instead of declaring a
+        new agent-native communications stack.
       </BriefNote>
 
       <StripLabel>philosophy</StripLabel>
       <BigHeading>
-        presence is
+        ai adapted.
         <br />
-        expensive.
+        not ai native.
       </BigHeading>
 
-      <DocBox label="the wrong assumption">
+      <DocBox label="the infrastructure position">
         <Prose>
-          <p>
-            productivity software assumed the hardest part of a meeting is remembering what
-            happened. so we got summaries, recaps, action items, highlights and key takeaways.
-          </p>
-          <p>
-            sometimes those are useful. but if you sat through the meeting, you already know what
-            happened. you do not need software to explain your own experience back to you.
-          </p>
           <PullQuote>
-            a summarizer asks what happened. a proxy asks what you needed from what happened.
+            not ai native, but battle-tested telecom infrastructure we trust, adopted, adapted around and augmented for use by autonomous ai agents
           </PullQuote>
+          <p>
+            the telephone network does not need to become artificially intelligent to become useful
+            to an agent. it needs a careful adapter: one that can receive events, preserve context,
+            expose safe tools, and leave authority with the operator.
+          </p>
         </Prose>
       </DocBox>
 
@@ -92,11 +100,11 @@ function PhilosophyPage() {
         <NumberedList items={principles} />
       </DocBox>
 
-      <DocBox label="delegate the presence" filled>
+      <DocBox label="adapt, don't disguise" filled>
         <p className="text-sm leading-relaxed">
-          you do not always need to spend an hour of your life acquiring one piece of information.
-          you do not always need to read a summary of something you already experienced. sometimes
-          you just need someone to go.
+          heyphony is a jerryrigged workaround in the useful sense: practical, inspectable, and
+          honest about its seams. it makes existing telecom legible to agents without pretending the
+          old constraints disappeared.
         </p>
       </DocBox>
     </div>

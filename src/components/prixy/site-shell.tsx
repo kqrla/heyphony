@@ -36,10 +36,10 @@ const footerLinkGroups = [
     ],
   },
   {
-    label: "behind prixy",
+    label: "behind heyphony",
     links: [
       { to: "/how-it-runs", label: "how it runs" },
-      { to: "/suite", label: "suite" },
+      { to: "/branches", label: "branch map" },
       { to: "/roadmap", label: "roadmap" },
       { to: "/coverage", label: "coverage" },
     ],
@@ -61,7 +61,7 @@ export function SiteShell() {
           className="font-mono text-[9px] whitespace-nowrap text-primary uppercase tracking-[0.25em] opacity-40"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          prixy / personal presence proxy / go, listen, ask, return
+          heyphony / self-hosted agent telephony / call, text, voicemail
         </span>
       </div>
 
@@ -72,16 +72,16 @@ export function SiteShell() {
               to="/"
               className="font-display text-xl leading-none font-black tracking-tight text-primary uppercase"
             >
-              prixy
+              heyphony
             </Link>
           </div>
           <div className="hidden flex-1 flex-col justify-center border-r border-primary px-3 py-1.5 sm:flex">
             <div className="text-[9px] uppercase tracking-[0.18em] text-primary opacity-55">type</div>
-            <div className="text-xs text-foreground">personal presence proxy</div>
+            <div className="text-xs text-foreground">agent phone toolkit</div>
           </div>
           <div className="hidden flex-col justify-center border-r border-primary px-3 py-1.5 md:flex">
             <div className="text-[9px] uppercase tracking-[0.18em] text-primary opacity-55">status</div>
-            <div className="text-xs text-foreground">preview</div>
+            <div className="text-xs text-foreground">source-available</div>
           </div>
           <div className="hidden flex-col justify-center px-3 py-1.5 md:flex">
             <div className="text-[9px] uppercase tracking-[0.18em] text-primary opacity-55">doc</div>
@@ -119,17 +119,25 @@ export function SiteShell() {
           <div className="border border-t-2 border-primary">
             <div className="border-b border-primary px-4 py-1.5">
               <span className="text-[10px] text-primary opacity-60">
-                concept and documentation
+                source and documentation
               </span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2fr]">
               <div className="border-b border-primary px-4 py-5 md:border-b-0 md:border-r">
-                <Link to="/" className="font-display text-3xl font-black text-primary">prixy</Link>
-                <div className="mt-1 text-xs text-muted-foreground">personal presence proxy</div>
+                <Link to="/" className="font-display text-3xl font-black text-primary">heyphony</Link>
+                <div className="mt-1 text-xs text-muted-foreground">a phone number for your ai agent</div>
                 <p className="mt-3 max-w-xs text-xs leading-relaxed text-muted-foreground">
-                  this is an explanatory shell, not the live product. prixy is currently in
-                  development.
+                  an explanatory site for the self-hosted toolkit. no carrier, phone number, or
+                  provider account is connected here.
                 </p>
+                <a
+                  href="https://github.com/tinkrland/heyphony"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
+                >
+                  read the source on github
+                </a>
               </div>
               <nav aria-label="footer navigation" className="grid grid-cols-2 sm:grid-cols-3">
                 {footerLinkGroups.map((group) => (
@@ -154,8 +162,8 @@ export function SiteShell() {
               </nav>
             </div>
             <div className="flex flex-wrap justify-between gap-2 border-t border-primary px-4 py-2 text-[10px] text-muted-foreground">
-              <span>personal presence, on your terms.</span>
-              <span>go, listen, ask, return.</span>
+              <span>ordinary telephony, adapted for agents.</span>
+              <span>one number, one agent, one message at a time.</span>
             </div>
           </div>
         </div>

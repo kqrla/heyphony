@@ -13,16 +13,16 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "about prixy | a personal proxy" },
+      { title: "about heyphony | a jerryrigged phone toolkit" },
       {
         name: "description",
         content:
-          "prixy is a personal presence proxy: your instance, your instructions, quietly present where you aren't.",
+          "heyphony is a source-available, self-hosted toolkit that gives an ai agent an ordinary phone number and local communications tools.",
       },
-      { property: "og:title", content: "about prixy | a personal proxy" },
+      { property: "og:title", content: "about heyphony | a jerryrigged phone toolkit" },
       {
         property: "og:description",
-        content: "a personal proxy, not another productivity app.",
+        content: "self-hosted, cli-first, carrier-connected, and honest about what is still experimental.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,29 +31,24 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-/*
-  the three cells below restate the positioning as constraints rather than
-  marketing claims, because "what it is not" is the clearest way to explain a
-  proxy to someone who has only ever used meeting summarizers.
-*/
 const positioning = [
   {
     marker: "01",
-    title: "personal, not corporate",
+    title: "self-hosted, not rented",
     description:
-      "prixy is your instance. it is not a shared bot invited to every calendar event in an organisation.",
+      "the toolkit and its communication history live with your host. your carrier account remains a separate, explicit dependency.",
   },
   {
     marker: "02",
-    title: "instructed, not automatic",
+    title: "cli-first, agent-readable",
     description:
-      "you decide what it should care about and what it should bring back. nothing is reported by default.",
+      "noninteractive setup and structured output let an agent discover missing information instead of stalling on a terminal prompt.",
   },
   {
     marker: "03",
-    title: "inspectable, not opaque",
+    title: "source-available, not mislabeled",
     description:
-      "the underlying transcript stays available when you want full context. otherwise it stays out of the way.",
+      "the repository describes individual versions converting to mit after two years. current source availability is not a blanket open-source claim.",
   },
 ];
 
@@ -65,36 +60,38 @@ function AboutPage() {
           { label: "document", value: "about" },
           { label: "type", value: "product note" },
           { label: "issue", value: "002" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "main + mcp" },
         ]}
       />
 
       <BriefNote>
-        about sheet. where prixy came from and what kind of thing it is meant to be.
+        about sheet. what kind of software heyphony is, and how the repository's branches fit together.
       </BriefNote>
 
       <StripLabel>about</StripLabel>
       <BigHeading>
-        a personal
+        jerryrigged
         <br />
-        proxy.
+        on purpose.
       </BigHeading>
 
       <DocBox label="origin">
         <Prose>
           <p>
-            prixy started from a simple question: what if an assistant actually went somewhere
-            instead of telling you about somewhere you already went?
+            heyphony started from a concrete question: what does it take to give an ai agent a phone
+            number of its own without inventing a parallel telephone system?
           </p>
           <p>
-            the result is a personal agent that can act as your presence across supported digital
-            spaces. it can register. it can attend. it can listen. it can ask. it can retrieve. and
-            it can come back with exactly what you needed.
+            the answer is a practical adapter around carriers, sip clients, webhooks, local files,
+            and agent tools. the main branch holds the baseline inbox and management workflow. the
+            mcp branch is the broadest integrated tree, adding structured tools, lookup and allow
+            policy, calling code, and a live voice-and-text timeline.
           </p>
-          <PullQuote>quietly present where you aren't.</PullQuote>
+          <PullQuote>ordinary telephony, made readable to an agent.</PullQuote>
           <p>
-            no forced recap. no mandatory dashboard. no assumption that every meeting needs to
-            become content. just a proxy.
+            other branches explore policy, lookup, calling, deployment, forwarding, devices,
+            omnichannel intake, and meetings. they are not all equally complete, and this site labels
+            them accordingly.
           </p>
         </Prose>
       </DocBox>

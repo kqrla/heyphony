@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BranchesRouteImport } from './routes/branches'
 import { Route as CoverageRouteImport } from './routes/coverage'
 import { Route as HowItRunsRouteImport } from './routes/how-it-runs'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
@@ -30,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranchesRoute = BranchesRouteImport.update({
+  id: '/branches',
+  path: '/branches',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoverageRoute = CoverageRouteImport.update({
@@ -86,6 +92,7 @@ const FeaturesSupportsRoute = FeaturesSupportsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/branches': typeof BranchesRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -100,6 +107,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/branches': typeof BranchesRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/branches': typeof BranchesRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/branches'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -145,6 +155,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/branches'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -159,6 +170,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/branches'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -174,6 +186,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BranchesRoute: typeof BranchesRoute
   CoverageRoute: typeof CoverageRoute
   HowItRunsRoute: typeof HowItRunsRoute
   PhilosophyRoute: typeof PhilosophyRoute
@@ -200,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branches': {
+      id: '/branches'
+      path: '/branches'
+      fullPath: '/branches'
+      preLoaderRoute: typeof BranchesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coverage': {
@@ -278,6 +298,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BranchesRoute: BranchesRoute,
   CoverageRoute: CoverageRoute,
   HowItRunsRoute: HowItRunsRoute,
   PhilosophyRoute: PhilosophyRoute,

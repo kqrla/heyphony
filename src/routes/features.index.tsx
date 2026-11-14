@@ -13,16 +13,16 @@ import {
 export const Route = createFileRoute("/features/")({
   head: () => ({
     meta: [
-      { title: "features | what prixy does" },
+      { title: "features | what heyphony does" },
       {
         name: "description",
         content:
-          "the capabilities, the stack behind them, and the considerations that shape how prixy attends on your behalf.",
+          "heyphony's implemented inbox, call history, voicemail, local interfaces, outbound gates, and operational constraints.",
       },
-      { property: "og:title", content: "features | what prixy does" },
+      { property: "og:title", content: "features | what heyphony does" },
       {
         property: "og:description",
-        content: "capabilities, stack, and considerations for a delegated presence proxy.",
+        content: "the baseline toolkit, its local architecture, and the boundaries around outbound communication.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -34,105 +34,105 @@ export const Route = createFileRoute("/features/")({
 const capabilities = [
   {
     marker: "01",
-    title: "register and attend",
+    title: "receive and normalize texts",
     description:
-      "completes pre-registration on luma or eventbrite, then joins the session itself, autonomously, with camera and mic off.",
+      "the catcher accepts json, form posts, and query-string deliveries, then adapts provider payloads into a common message shape.",
   },
   {
     marker: "02",
-    title: "listen with intent",
+    title: "keep a local inbox",
     description:
-      "follows the live transcript against your capture requests, not a generic summary. keyword matches are saved with context as they happen.",
+      "append messages to jsonl, deduplicate provider ids, retain the raw payload, and track read state separately.",
   },
   {
     marker: "03",
-    title: "watch the chat",
+    title: "read calls and voicemail",
     description:
-      "monitors meeting chat in real time and grabs links, access codes, and form urls the moment they are posted.",
+      "inspect threads, missed calls, call history, voicemail, and imported carrier email through local views.",
   },
   {
     marker: "04",
-    title: "ask prepared questions",
+    title: "work through cli or browser",
     description:
-      "waits for an appropriate opening, asks what you specified, and captures the response.",
+      "use agent-friendly commands and structured setup output, or open the local browser launcher for threads and drafts.",
   },
   {
     marker: "05",
-    title: "mark attendance",
+    title: "send through explicit gates",
     description:
-      "sends a chat message, fills an attendance form, or uses a custom method where a platform enforces presence.",
+      "single-recipient sms adapters exist for voip.ms, flowroute, and signalwire, behind environment and send authorization checks.",
   },
   {
     marker: "06",
-    title: "retrieve precisely",
+    title: "extend through mcp",
     description:
-      "returns the decision, deadline, price, availability date, answer, or live promo code you asked for, with the full diarized transcript retained as source.",
+      "the mcp branch adds fifteen local tools, a javascript sdk, policy and lookup integration, calling code, and a live event timeline.",
   },
 ];
 
 const stack = [
   {
-    title: "session interface layer",
+    title: "carrier and number layer",
     description:
-      "per-provider adapters that know how to join, mute, chat, and leave a given meeting platform.",
+      "a provider-owned did, carrier account, sip credentials, and the provider's chosen sms delivery route.",
   },
   {
-    title: "instruction model",
+    title: "persistent host layer",
     description:
-      "your goal, your prepared questions, and your reporting preferences stored as a single structured brief.",
+      "an awake machine holds the sip registration, credentials, catcher, and communication history instead of relying on an ephemeral agent run.",
   },
   {
-    title: "live listening pipeline",
+    title: "intake and normalization",
     description:
-      "streaming transcription with goal-aware extraction, so relevant moments are flagged as they happen.",
+      "provider-specific webhook or email input becomes a common message record while preserving the original delivery for inspection.",
   },
   {
-    title: "identity and account layer",
+    title: "local state",
     description:
-      "signed-in profiles, account switching, and multiple linked inboxes so prixy appears as the right you.",
+      "jsonl messages, read marks, drafts, sent records, imported attachments, and read-only access to the sip client's call database.",
   },
   {
-    title: "retention store",
+    title: "agent interfaces",
     description:
-      "transcripts and artefacts held privately, with user-controlled deletion as the default expectation.",
+      "commands and structured output on main; a local stdio mcp server and javascript sdk on the mcp branch.",
   },
   {
-    title: "delivery layer",
+    title: "outbound policy",
     description:
-      "the short answer first, delivered to where you already are, with the source one click away.",
+      "explicit send authorization on main, with closed-by-default sender policy on the allow branch and outbound calling experiments in callheavy.",
   },
 ];
 
 const considerations = [
   {
-    title: "consent and disclosure",
+    title: "provider verification",
     description:
-      "some rooms and some jurisdictions require participants to be told a proxy is present and recording. prixy is built to disclose rather than hide.",
+      "provider models and adapters are implemented, but the repository marks provider verification false. real delivery still needs a live account test.",
   },
   {
-    title: "platform rules",
+    title: "webhook exposure",
     description:
-      "not every provider permits automated participants. supported coverage is defined per platform instead of promised broadly.",
+      "main's optional catcher token permits requests when unset. use a strong token, tls termination, and appropriate network controls in deployment.",
   },
   {
-    title: "identity boundaries",
+    title: "local interface boundary",
     description:
-      "acting as your presence is a delegation, not an impersonation. what prixy may say on your behalf stays explicitly scoped.",
+      "the browser launcher defaults to loopback and has no authentication beyond its bind address. do not expose it as a public dashboard.",
   },
   {
-    title: "accuracy over volume",
+    title: "otp limitations",
     description:
-      "a confident wrong answer is worse than an honest gap, so unresolved requests are reported as unresolved.",
+      "voip numbers can be rejected by verification-code services. an agent-controlled number does not guarantee otp delivery or device attestation.",
   },
   {
-    title: "data retention",
+    title: "no campaign engine",
     description:
-      "recordings are sensitive by default. retention is opt-in per session and deletable at any point.",
+      "bulk lists, schedules, retry queues, and quiet-hours automation are outside the baseline scope. outbound gates are not compliance certification.",
   },
   {
-    title: "portability",
+    title: "sensitive local data",
     description:
-      "provider adapters are kept replaceable so the product is not locked to a single meeting vendor.",
+      "messages and attachments are sensitive. operators must choose file permissions, retention, deletion, and backup policies for their own host.",
   },
 ];
 
@@ -144,22 +144,22 @@ function FeaturesPage() {
           { label: "document", value: "features" },
           { label: "sections", value: "capabilities · stack · considerations" },
           { label: "issue", value: "001" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "main + named branches" },
         ]}
       />
 
       <BriefNote>
-        tell prixy where to go and what you need. this sheet covers what it can do, what sits behind
-        those abilities, and the constraints that shape them.
+        this sheet separates the baseline toolkit from branch additions and operational duties. an
+        adapter being present is not the same as a carrier delivery being verified.
       </BriefNote>
 
       <StripLabel>features</StripLabel>
       <BigHeading>
-        go to the
+        give the agent
         <br />
-        meeting.
+        the thread.
         <br />
-        get the thing.
+        gate the reply.
       </BigHeading>
 
       <DocBox label="capabilities">
@@ -177,11 +177,12 @@ function FeaturesPage() {
       <DocBox label="stack">
         <NumberedList items={stack} />
         <div className="mt-4 flex flex-wrap gap-2">
-          <Tag>adapters</Tag>
-          <Tag>transcription</Tag>
-          <Tag>goal extraction</Tag>
-          <Tag>identity</Tag>
-          <Tag>private retention</Tag>
+          <Tag>sip</Tag>
+          <Tag>webhooks</Tag>
+          <Tag>jsonl</Tag>
+          <Tag>cli</Tag>
+          <Tag>mcp</Tag>
+          <Tag>explicit outbound</Tag>
         </div>
       </DocBox>
 
@@ -194,13 +195,13 @@ function FeaturesPage() {
           to="/features/supports"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          supported platforms
+          supported provider models
         </Link>
         <Link
-          to="/roadmap"
+          to="/coverage"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          roadmap
+          honest coverage
         </Link>
       </div>
     </div>

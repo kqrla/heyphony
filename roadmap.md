@@ -2,37 +2,18 @@
 
 ## current work
 
-- [x] reorganize suite groups, add Aixplore's popup, and fit Jerry's popup without scrolling
-- [x] resolve Suite's mixed React optimizer cache and verify Jerry's dialog
-- [x] add active browser tab sharing and moira to execution notes
-- [x] add jerry's understated example popup and verify both pages
-- [x] group coverage social platforms and update relay and horizon cards
-- [x] complete the coverage card layout and verify the preview errors are resolved
-- [ ] tighten footer page-link spacing
-- [x] reorganize execution notes into provider cards and two-column voice and video sections
-- [x] add moira after milo and jerry in the suite
-- [ ] verify the updated pages and footer
+- [x] review Heyphony code and prose across all ten public branches
+- [x] record migration capabilities and source limitations
+- [ ] adapt the ruled-document shell and all page content to Heyphony
+- [ ] add the exact required philosophy statement
+- [ ] distinguish main, MCP, implemented branches, and designed experiments
+- [ ] update route metadata and branch navigation
+- [ ] verify routing, build output, and the central reading flow in the preview
 
-## short term
+## content rules
 
-- refine the responsive public shell through usability testing
-- define supported meeting and event providers
-- prototype instruction entry and precise result delivery
-- establish consent, recording, and retention rules
-- validate zero-total payment handoffs with kernel.sh vault and agentcard.ai; keep agentcard.sh as a candidate
-
-## mid term
-
-- add account access and private session history
-- add event registration and timezone handling
-- support prepared questions and answer capture
-- add private transcript retention with user-controlled deletion
-- carry chosen personal context across meeting, voice, and video surfaces
-
-## long term
-
-- expand into more supported digital spaces
-- improve personal relevance without increasing interface noise
-- add portable provider adapters to avoid platform lock-in
-- support trusted delegation policies for teams and assistants
-- support open-source browser environments on an owned server, gcp, or azure
+- describe Heyphony as a self-hosted, CLI-first, source-available toolkit
+- keep carrier connections explanatory; this public site connects no provider
+- separate implemented code, local proofs, carrier verification, and designs
+- do not advertise meetings, omnichannel delivery, mobile calling, or hosted service as shipped
+- preserve the existing visual shell and semantic design tokens

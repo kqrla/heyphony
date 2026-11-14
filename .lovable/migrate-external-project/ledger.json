@@ -1,1 +1,19 @@
-[{"capability":"code","source":"archive","outcome":"migrate","status":"verified","next_action":"none"},{"capability":"database/auth/records","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"}]
+{
+  "source": "https://github.com/tinkrland/heyphony",
+  "branches_reviewed": ["main", "mcp", "allow", "lookup", "callheavy", "setup", "mobile", "new", "omni", "meetings"],
+  "capabilities": [
+    {"capability":"source code and prose review","source":"all ten remote branches","outcome":"used as the factual basis for the explanatory site","status":"verified","next_action":"none"},
+    {"capability":"public website content","source":"repository product positioning and documentation","outcome":"adapt the existing ruled-document shell to Heyphony","status":"in_progress","next_action":"rewrite routes and metadata"},
+    {"capability":"application schema","source":"local JSONL, sidecar files, and Linphone SQLite","outcome":"document local storage; no hosted database exists to migrate","status":"not_applicable","next_action":"none"},
+    {"capability":"application records and auth users","source":"no record export or hosted account system detected","outcome":"no records or identities to import","status":"not_applicable","next_action":"none"},
+    {"capability":"uploaded files and voicemail audio","source":"local files and carrier email attachments","outcome":"documented as user-hosted data, not copied into this public site","status":"not_applicable","next_action":"none"},
+    {"capability":"carrier and communications providers","source":"provider adapters and branch experiments","outcome":"preserve names and implementation states in documentation without connecting them","status":"in_progress","next_action":"write provider and coverage pages"},
+    {"capability":"public endpoints","source":"local catcher, local browser launcher, MCP stdio","outcome":"document interfaces and security boundaries; no production public URL was detected","status":"in_progress","next_action":"write execution notes"},
+    {"capability":"callbacks and webhooks","source":"carrier SMS catcher and designed omni lanes","outcome":"document reachability requirements without deploying listeners","status":"in_progress","next_action":"write setup and execution notes"},
+    {"capability":"schedules and campaigns","source":"baseline scope excludes campaign queues, retries, schedules, and quiet-hours engines","outcome":"exclude them from advertised capabilities","status":"verified","next_action":"none"},
+    {"capability":"payments and hosted service","source":"carrier billing and planned hosted offering","outcome":"do not present a paid hosted product or implemented purchasing","status":"verified","next_action":"none"},
+    {"capability":"secrets","source":"provider credential requirements only","outcome":"no credentials requested, copied, or needed for explanatory content","status":"not_applicable","next_action":"none"},
+    {"capability":"cutover","source":"public GitHub repository to explanatory website","outcome":"no production service or external caller is being moved","status":"not_applicable","next_action":"none"},
+    {"capability":"verification","source":"rewritten public routes","outcome":"build, routing tests, and browser checks","status":"pending","next_action":"verify all pages and required philosophy copy"}
+  ]
+}

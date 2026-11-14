@@ -12,16 +12,16 @@ import {
 export const Route = createFileRoute("/roadmap")({
   head: () => ({
     meta: [
-      { title: "roadmap | where prixy goes next" },
+      { title: "roadmap | where heyphony goes next" },
       {
         name: "description",
         content:
-          "the path from precise information retrieval to a trusted personal presence proxy.",
+          "heyphony's path from a local telephone inbox to verified providers, stronger calling tools, and carefully gated communication surfaces.",
       },
-      { property: "og:title", content: "roadmap | where prixy goes next" },
+      { property: "og:title", content: "roadmap | where heyphony goes next" },
       {
         property: "og:description",
-        content: "prixy's plans for supported sessions, safe payment handoffs, and shared personal context.",
+        content: "ordered by implementation evidence and operational proof, not fictional release dates.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,29 +32,34 @@ export const Route = createFileRoute("/roadmap")({
 
 const stages = [
   {
-    title: "now / supported sessions",
+    title: "now / make the baseline legible",
     description:
-      "reliable attendance, focused listening, specific questions and concise answers across supported virtual events.",
+      "number setup, sms intake, a deduplicated local inbox, read marks, threads, call history, voicemail import, cli access, and a local browser interface.",
   },
   {
-    title: "next / registration and timing",
+    title: "prove / real carrier deliveries",
     description:
-      "handle more of the work before a session, including registration, reminders, timezone handling and attendance requirements.",
+      "exercise each provider model with real accounts, actual sms delivery, voice registration, and media. adapter presence alone does not close this stage.",
   },
   {
-    title: "next / payment handoffs",
+    title: "integrate / the mcp tool surface",
     description:
-      "validate kernel.sh vault and agentcard.ai against live checkout gateways. the current design only proceeds with a clearly readable $0 total after a promo code; nonzero or unreadable totals stay blocked. agentcard.sh remains a candidate, not a built rail.",
+      "carry the broadest branch's structured tools, javascript sdk, allow and lookup integration, calling code, and live timeline through repeatable end-to-end checks.",
   },
   {
-    title: "later / shared personal context",
+    title: "harden / deployment and data boundaries",
     description:
-      "carry your chosen identity, preferences, and ongoing threads across meetings, voice, and video so each surface has the same personal context. this shared context is designed, not complete; instructions, source material, and reporting stay under your control.",
+      "document tls, provider authentication, restrictive file permissions, retention, rate limits, service management, and safe remote access without generalizing one branch's gates to every branch.",
   },
   {
-    title: "eventually / broader presence",
+    title: "extend / calling and device control",
     description:
-      "extend the same delegation model to more digital spaces without turning prixy into a noisy productivity layer.",
+      "move from local audio and simulated ring proofs toward real registered calls, reliable handoffs, and clearly bounded android or ios support.",
+  },
+  {
+    title: "later / omnichannel and meetings",
+    description:
+      "omni and meetings remain designs until actual deliveries and room joins are demonstrated. they should not be promoted by adding more marketing copy.",
   },
 ];
 
@@ -64,28 +69,28 @@ function RoadmapPage() {
       <MetaRow
         fields={[
           { label: "document", value: "roadmap" },
-          { label: "type", value: "schedule" },
+          { label: "type", value: "evidence sequence" },
           { label: "issue", value: "006" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "no invented dates" },
         ]}
       />
 
       <BriefNote>
-        schedule sheet. ordered by confidence, not by date, because dates on a preview are fiction.
+        ordered by confidence and proof, not by date. branch names show where the current work lives.
       </BriefNote>
 
       <StripLabel>roadmap</StripLabel>
       <BigHeading>
-        one answer,
+        first receive.
         <br />
-        then trust.
+        then prove.
       </BigHeading>
 
       <DocBox label="intent">
         <Prose>
           <p>
-            the goal is not to process more meetings. it is to give back the time you would have
-            spent attending them.
+            the goal is not to make every channel look finished. it is to make one ordinary phone
+            number dependable, inspectable, and useful to an agent before widening the surface.
           </p>
         </Prose>
       </DocBox>

@@ -14,16 +14,16 @@ import {
 export const Route = createFileRoute("/problem")({
   head: () => ({
     meta: [
-      { title: "problem | the cost of being there" },
+      { title: "problem | agents need ordinary phone access" },
       {
         name: "description",
         content:
-          "the problems prixy responds to: mandatory attendance, recap overload, and information buried inside live sessions.",
+          "the problems heyphony responds to: fragmented messages, unreachable agents, host-held credentials, and risky outbound automation.",
       },
-      { property: "og:title", content: "problem | the cost of being there" },
+      { property: "og:title", content: "problem | agents need ordinary phone access" },
       {
         property: "og:description",
-        content: "attendance is expensive, and recaps did not fix it.",
+        content: "the telephone system works, but its accounts and protocols were not shaped for autonomous agents.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -34,52 +34,52 @@ export const Route = createFileRoute("/problem")({
 
 const symptoms = [
   {
-    title: "the hour tax",
+    title: "no stable place to call",
     description:
-      "an hour of live attendance for one figure, one date, or one confirmation you needed. a webinar that overlaps with your actual work.",
+      "an agent may have a chat thread or an api key, but no ordinary number that can receive a call or text.",
   },
   {
-    title: "live-only information",
+    title: "scattered communication state",
     description:
-      "the office hours session where the only thing you need is one link they will paste in chat, announced live and never written down.",
+      "sms webhooks, carrier emails, missed-call records, and voicemail attachments arrive in different shapes and places.",
   },
   {
-    title: "recap overload",
+    title: "ephemeral agent sessions",
     description:
-      "summaries of sessions you already sat through, adding reading time to time already spent.",
+      "a temporary tool process is a poor home for a long-lived sip registration, provider credential, or inbound webhook listener.",
   },
   {
-    title: "attendance gates",
+    title: "inbound reachability",
     description:
-      "registration, waiting rooms, and presence requirements that exist before any value is delivered.",
+      "a carrier can hold a message, but a webhook still needs an awake, reachable host. a sleeping laptop is not public infrastructure.",
   },
   {
-    title: "timezone collisions",
+    title: "outbound risk",
     description:
-      "the hackathon kickoff call at 3am your time. the session that matters happens at an hour that does not work for your life.",
+      "the moment an agent can send or dial, recipient choice, spending, permission, and frequency become explicit policy questions.",
   },
   {
-    title: "the one-question meeting",
+    title: "provider fragmentation",
     description:
-      "a quarterly review where you need to ask one question during q&a, and the answer determines your roadmap.",
+      "carriers differ in voice registration, sms delivery, email fallback, trunking, and api support. one generic promise hides real differences.",
   },
 ];
 
 const whyNow = [
   {
-    title: "everything moved to live calls",
+    title: "telephony assumes a human endpoint",
     description:
-      "product updates, community announcements, and decisions increasingly happen in synchronous rooms rather than documents.",
+      "softphones, inboxes, and account dashboards were built around a person tapping and reading. agents need structured events and deliberate tools instead.",
   },
   {
-    title: "summaries answered the wrong question",
+    title: "agent tools assume easy connectivity",
     description:
-      "note-taking tools assume you are in the meeting and ask what happened. they are companions. the unmet need is a proxy: what you specifically wanted from a session you were never in.",
+      "an ephemeral runtime can call an api, but keeping a number registered and an inbound route alive requires a persistent operational home.",
   },
   {
-    title: "delegation had no digital equivalent",
+    title: "automation needs narrower authority",
     description:
-      "sending someone in your place is normal in the physical world and has had no clean online counterpart.",
+      "giving an agent every outbound capability by default is not autonomy; it is unbounded permission. the useful interface starts with reading and gates action.",
   },
 ];
 
@@ -91,22 +91,24 @@ function ProblemPage() {
           { label: "document", value: "problem" },
           { label: "type", value: "problem statement" },
           { label: "issue", value: "001" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "source-available" },
         ]}
       />
 
       <BriefNote>
-        the problem is not that meetings are unrecorded. it is that the only way to obtain what a
-        session contains is to spend the session.
+        the problem is not a shortage of communication channels. it is making ordinary telephone
+        events reliable, legible, and safely actionable for an agent.
       </BriefNote>
 
       <StripLabel>problem</StripLabel>
       <BigHeading>
-        being there
+        the agent
         <br />
-        costs
+        has tools.
         <br />
-        too much.
+        it needs a
+        <br />
+        number.
       </BigHeading>
 
       <DocBox label="symptoms">
@@ -119,10 +121,10 @@ function ProblemPage() {
 
       <DocBox label="the gap">
         <Prose>
-          <PullQuote>attendance is the price. information is the product.</PullQuote>
+          <PullQuote>the carrier delivers events. the agent needs a coherent communications interface.</PullQuote>
           <p>
-            prixy targets that gap directly: keep the information, drop the requirement that you be
-            the one in the room.
+            heyphony fills that gap with local normalization, storage, views, and carefully scoped
+            outward actions rather than another closed communications dashboard.
           </p>
         </Prose>
         <div className="mt-4">

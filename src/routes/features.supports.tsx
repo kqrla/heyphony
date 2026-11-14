@@ -1,11 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  CameraMark,
-  DiscordMark,
-  SlackMark,
-  TicketMark,
-} from "../components/prixy/platform-icons";
-import {
   BigHeading,
   BriefNote,
   CellGrid,
@@ -19,16 +13,16 @@ import {
 export const Route = createFileRoute("/features/supports")({
   head: () => ({
     meta: [
-      { title: "supports | what prixy can join" },
+      { title: "supports | heyphony provider and host coverage" },
       {
         name: "description",
         content:
-          "the meeting and event platforms prixy targets, the ways it obtains a join link, and how account switching works.",
+          "heyphony's modeled telephone providers, outbound sms adapters, host requirements, and experimental platform branches.",
       },
-      { property: "og:title", content: "supports | what prixy can join" },
+      { property: "og:title", content: "supports | heyphony provider and host coverage" },
       {
         property: "og:description",
-        content: "meeting platforms, event registration, join paths, and identity handling.",
+        content: "provider coverage is uneven by design: voice, sms intake, and outbound support are listed separately.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -37,172 +31,103 @@ export const Route = createFileRoute("/features/supports")({
   component: SupportsPage,
 });
 
-/*
-  platform coverage mirrors the reference build: bot-service platforms get full
-  transcript and chat support, browser-automation platforms get the same capture
-  logic through a heavier join path. icons use the monochrome marks, not brand
-  colours, so the sheet stays in one ink.
-*/
-const meetingPlatforms = [
+const providers = [
   {
-    marker: "bot path",
-    icon: <CameraMark size={15} />,
-    title: "zoom",
-    description:
-      "scheduled meetings and webinars: passcodes, registration links, q&a panels, and breakout rooms.",
+    marker: "sms intake + outbound adapter",
+    title: "voip.ms",
+    description: "voice registration and sms model, with one of main's three wired outbound http adapters. live carrier verification is still required.",
   },
   {
-    marker: "bot path",
-    icon: <CameraMark size={15} />,
-    title: "google meet",
-    description:
-      "calendar-native links, waiting rooms, and in-call chat capture for workspace and personal accounts.",
+    marker: "sms intake + outbound adapter",
+    title: "flowroute",
+    description: "voice and sms provider model with a wired outbound adapter. account credentials and a real delivery test remain operator responsibilities.",
   },
   {
-    marker: "bot path",
-    icon: <CameraMark size={15} />,
-    title: "microsoft teams",
-    description: "org-invited meetings and guest joins where external participants are permitted.",
+    marker: "sms intake + outbound adapter",
+    title: "signalwire",
+    description: "voice and sms provider model with a wired outbound adapter using the provider's space, project, and token configuration.",
   },
   {
-    marker: "bot path",
-    icon: <SlackMark size={15} />,
-    title: "slack huddles",
-    description:
-      "huddles and scheduled calls inside workspaces you have connected, joined when they go live.",
+    marker: "provisioning preparation",
+    title: "anveo",
+    description: "stock and area lookup plus prepared order requests. cli purchasing is deliberately parked rather than presented as working provisioning.",
   },
   {
-    marker: "bot path",
-    icon: <CameraMark size={15} />,
-    title: "cisco webex",
-    description: "meetings and webinars through the same bot path as zoom and meet.",
+    marker: "provider model",
+    title: "questblue",
+    description: "trunk-routing coverage rather than a per-number softphone login. the voice topology differs from registration-based providers.",
   },
   {
-    marker: "browser path",
-    icon: <DiscordMark size={15} />,
-    title: "discord",
-    description:
-      "voice channels and stage events, including calls that only exist once someone opens them live in a server.",
+    marker: "provider model",
+    title: "bulkvs",
+    description: "modeled telephone-provider coverage. check the specific voice and sms route before assuming the same setup as another carrier.",
   },
   {
-    marker: "browser path",
-    icon: <CameraMark size={15} />,
-    title: "bluejeans and ringcentral",
-    description:
-      "anything with a browser join url. automation clicks join, enters your name, and captures audio from the tab.",
+    marker: "xmpp intake route",
+    title: "jmp.chat",
+    description: "a distinct provider path using xmpp rather than the same webhook or carrier-email intake shape as the other models.",
   },
   {
-    marker: "stream",
-    icon: <CameraMark size={15} />,
-    title: "live streams",
-    description:
-      "streamed sessions with live chat, where the capture target is usually something dropped in the chat itself.",
+    marker: "voice-only model",
+    title: "voyced",
+    description: "listed for voice coverage. no baseline outbound sms adapter is claimed for this provider.",
+  },
+  {
+    marker: "voice-only model",
+    title: "voxacall",
+    description: "listed for voice coverage. no baseline outbound sms adapter is claimed for this provider.",
+  },
+  {
+    marker: "voice-only model",
+    title: "bitcall",
+    description: "listed for voice coverage. no baseline outbound sms adapter is claimed for this provider.",
   },
 ];
 
-const eventPlatforms = [
+const intakePaths = [
   {
-    marker: "pre-registration",
-    icon: <TicketMark size={15} />,
-    title: "luma",
-    description:
-      "prixy registers for the event, keeps the confirmation, and grabs the join link when it is released to attendees.",
+    title: "json or form webhook",
+    description: "the provider posts to the catcher's provider-specific route, where the payload is normalized and stored.",
   },
   {
-    marker: "pre-registration",
-    icon: <TicketMark size={15} />,
-    title: "eventbrite",
-    description:
-      "ticket-style registration flows: prixy signs up, holds the ticket, and follows the online-event link it unlocks.",
+    title: "query-string delivery",
+    description: "providers that forward message details in a url can use the same intake boundary without pretending the payload is identical.",
   },
   {
-    marker: "scheduling",
-    icon: <TicketMark size={15} />,
-    title: "calendly",
-    description:
-      "booking links sync into the calendar, so a session scheduled through calendly is discovered and attended automatically.",
+    title: "carrier email",
+    description: "message or voicemail email can be imported with its attachments, providing an alternative where the carrier supports it.",
+  },
+  {
+    title: "xmpp route",
+    description: "jmp.chat follows its own communications path rather than being forced into a webhook-only description.",
   },
 ];
 
-const joinPaths = [
+const hostCoverage = [
   {
-    title: "link already in your calendar",
-    description:
-      "the invite exists and carries a join url. calendar sync discovers the event and prixy attends at the scheduled time.",
+    title: "linux",
+    description: "the clearest host path for persistent services and pulseaudio or pipewire audio experiments.",
   },
   {
-    title: "assigned meeting, link arrives later",
-    description:
-      "you are on the invite list but the link is emailed beforehand. prixy watches the connected inbox and picks up the url when it lands.",
+    title: "macos",
+    description: "documented host paths and blackhole installation for audio routing experiments.",
   },
   {
-    title: "call starts live in discord or slack",
-    description:
-      "there is no link at all until someone opens a channel call. prixy stays present in the space and joins when the call goes live.",
+    title: "windows / wsl2",
+    description: "available as the least-proven host route; windows audio experiments involve proprietary vb-cable.",
   },
   {
-    title: "pre-registration on luma or eventbrite",
-    description:
-      "gated sessions require signing up first. prixy completes the registration, receives the confirmation, and keeps the resulting link.",
+    title: "android / mobile branch",
+    description: "four adb control verbs and ring experiments. this is not a shipped android phone app or a proven real-call flow.",
   },
   {
-    title: "booked through calendly",
-    description:
-      "a calendly booking lands on your calendar with its conferencing link attached. sync picks it up like any other event.",
+    title: "ios / mobile branch",
+    description: "screen-access mirroring only. no equivalent ios automation or calling capability is claimed.",
   },
   {
-    title: "link dropped live during a window",
-    description:
-      "the url is posted in a discord channel, slack thread, or forum at some point during an announced period. prixy watches that surface for the window and joins the moment it appears.",
+    title: "mcp clients",
+    description: "the mcp branch exposes local stdio tools and a javascript sdk. it is not a hosted internet api.",
   },
-];
-
-const identity = [
-  {
-    title: "logged-in sessions",
-    description:
-      "prixy uses your authenticated session for a platform so it enters rooms restricted to signed-in members.",
-  },
-  {
-    title: "account switching",
-    description:
-      "pick which profile attends. a work identity for the client call, a personal one for the community event.",
-  },
-  {
-    title: "profile matching",
-    description:
-      "display name, avatar, and org affiliation are matched to what the meeting expects, so the room sees a coherent participant.",
-  },
-  {
-    title: "multiple inboxes",
-    description:
-      "connect several email accounts. prixy watches each one for invites, confirmations, and late-arriving links.",
-  },
-  {
-    title: "multiple calendars",
-    description:
-      "google, outlook, and other calendars sync together, so a meeting on any of them is discovered without forwarding invites.",
-  },
-  {
-    title: "quiet defaults",
-    description:
-      "camera off and mic off by default, with a configurable join delay so prixy arrives after the host has opened the room.",
-  },
-];
-
-/*
-  the coverage matrix is a plain table because the data is genuinely tabular;
-  forcing it into the cell grid would hide the per-platform differences.
-*/
-const coverage = [
-  { platform: "zoom", path: "bot", transcript: "yes", chat: "send + receive", breakout: "yes" },
-  { platform: "google meet", path: "bot", transcript: "yes", chat: "send + receive", breakout: "n/a" },
-  { platform: "microsoft teams", path: "bot", transcript: "yes", chat: "send + receive", breakout: "n/a" },
-  { platform: "slack huddles", path: "bot", transcript: "yes", chat: "send only", breakout: "n/a" },
-  { platform: "cisco webex", path: "bot", transcript: "yes", chat: "no chat", breakout: "n/a" },
-  { platform: "discord", path: "browser", transcript: "yes", chat: "via browser", breakout: "n/a" },
-  { platform: "bluejeans", path: "browser", transcript: "yes", chat: "via browser", breakout: "n/a" },
-  { platform: "ringcentral", path: "browser", transcript: "yes", chat: "via browser", breakout: "n/a" },
 ];
 
 function SupportsPage() {
@@ -213,93 +138,46 @@ function SupportsPage() {
           { label: "document", value: "supports" },
           { label: "parent", value: "features" },
           { label: "issue", value: "002" },
-          { label: "status", value: "target coverage" },
+          { label: "status", value: "models + named adapters" },
         ]}
       />
 
       <BriefNote>
-        coverage is defined per platform and per join path, because getting into the room is
-        usually harder than being in it. everything listed here is target coverage for the preview
-        product.
+        provider coverage is not one checkbox. voice topology, sms intake, outbound adapters, and
+        real-world verification are separate properties, and current provider prices are not quoted here.
       </BriefNote>
 
       <StripLabel>supports</StripLabel>
       <BigHeading>
-        where it
+        bring your
         <br />
-        can show up.
+        own carrier.
       </BigHeading>
 
-      <DocBox label="meeting platforms">
-        <CellGrid items={meetingPlatforms} />
+      <DocBox label="telephone providers">
+        <CellGrid items={providers} />
       </DocBox>
 
-      <DocBox label="event and scheduling platforms">
-        <CellGrid items={eventPlatforms} />
-        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-          event platforms are where the link comes from, not where the call happens. prixy handles
-          the registration or booking, then attends wherever the event actually takes place.
-        </p>
+      <DocBox label="how texts arrive">
+        <NumberedList items={intakePaths} />
       </DocBox>
 
-      <DocBox label="how it joins">
-        <NumberedList items={joinPaths} />
-      </DocBox>
-
-      <DocBox label="coverage matrix">
-        <div className="overflow-x-auto border border-primary">
-          <table className="w-full min-w-[34rem] border-collapse text-left">
-            <thead>
-              <tr className="border-b border-primary">
-                {["platform", "join path", "transcript", "chat", "breakouts"].map((heading) => (
-                  <th
-                    key={heading}
-                    className="px-3 py-2 text-[10px] font-normal uppercase tracking-[0.18em] text-primary opacity-60"
-                  >
-                    {heading}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {coverage.map((row, rowIndex) => (
-                <tr
-                  key={row.platform}
-                  className={rowIndex < coverage.length - 1 ? "border-b border-primary" : ""}
-                >
-                  <td className="px-3 py-2 text-xs font-semibold text-primary">{row.platform}</td>
-                  <td className="px-3 py-2 text-xs text-muted-foreground">{row.path}</td>
-                  <td className="px-3 py-2 text-xs text-muted-foreground">{row.transcript}</td>
-                  <td className="px-3 py-2 text-xs text-muted-foreground">{row.chat}</td>
-                  <td className="px-3 py-2 text-xs text-muted-foreground">{row.breakout}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-          the bot path is a managed meeting-bot service; the browser path is headless browser
-          automation with audio capture. the capture logic on top is identical either way.
-        </p>
-      </DocBox>
-
-      <DocBox label="accounts and identity">
-        <CellGrid items={identity} columns={2} />
+      <DocBox label="hosts and agent interfaces">
+        <CellGrid items={hostCoverage} columns={2} />
         <div className="mt-4 flex flex-wrap gap-2">
-          <Tag>logged-in access</Tag>
-          <Tag>account switching</Tag>
-          <Tag>profile matching</Tag>
-          <Tag>multiple inboxes</Tag>
-          <Tag>multiple calendars</Tag>
-          <Tag>camera and mic off</Tag>
+          <Tag>persistent host</Tag>
+          <Tag>python 3</Tag>
+          <Tag>npm wrapper</Tag>
+          <Tag>sip client</Tag>
+          <Tag>public inbound route</Tag>
         </div>
       </DocBox>
 
-      <DocBox label="not supported" filled>
+      <DocBox label="not baseline support" filled>
         <p className="text-sm leading-relaxed">
-          rooms where automated participants are prohibited, sessions requiring physical presence
-          or identity verification prixy cannot legitimately satisfy, and any space where you have
-          not granted it access.
+          zoom, google meet, teams, whatsapp, slack, discord, and streaming lanes belong to designed
+          meeting or omni branches, not to main's working telephone inbox. mobile calling is also
+          experimental rather than delivered.
         </p>
       </DocBox>
 
@@ -311,10 +189,10 @@ function SupportsPage() {
           back to features
         </Link>
         <Link
-          to="/features/capabilities"
+          to="/coverage"
           className="border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
         >
-          capability sheet
+          implementation status
         </Link>
       </div>
     </div>

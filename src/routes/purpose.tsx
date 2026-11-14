@@ -13,16 +13,16 @@ import {
 export const Route = createFileRoute("/purpose")({
   head: () => ({
     meta: [
-      { title: "purpose | why prixy exists" },
+      { title: "purpose | why heyphony exists" },
       {
         name: "description",
         content:
-          "prixy exists to separate attendance from information, so an hour in a call can become one line of answer.",
+          "heyphony gives an autonomous agent a stable telephone identity and a local way to read and answer its communications.",
       },
-      { property: "og:title", content: "purpose | why prixy exists" },
+      { property: "og:title", content: "purpose | why heyphony exists" },
       {
         property: "og:description",
-        content: "delegate the presence, keep the information.",
+        content: "one ordinary number, one agent, and communications it can actually use.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,19 +33,19 @@ export const Route = createFileRoute("/purpose")({
 
 const intentions = [
   {
-    title: "give back the hour",
+    title: "make the agent reachable",
     description:
-      "attendance is the expensive part. if the value of a session is one detail, the hour should be optional.",
+      "a conversational interface is not a phone number. heyphony gives the agent a stable place to receive texts, calls, and voicemail.",
   },
   {
-    title: "answer the actual question",
+    title: "keep the operator in control",
     description:
-      "you already know what you need. prixy is built around that stated need, not around generic coverage.",
+      "the carrier account, host, stored messages, and outbound permissions remain with the person running the toolkit.",
   },
   {
-    title: "reduce processing load",
+    title: "turn events into context",
     description:
-      "a recap is another document to read. one line of answer is not.",
+      "normalize provider payloads, deduplicate deliveries, preserve threads, and expose the result through agent-readable views.",
   },
 ];
 
@@ -57,31 +57,31 @@ function PurposePage() {
           { label: "document", value: "purpose" },
           { label: "type", value: "intent statement" },
           { label: "issue", value: "001" },
-          { label: "status", value: "preview" },
+          { label: "status", value: "source-available" },
         ]}
       />
 
       <BriefNote>
-        purpose sheet. what prixy is for, stated plainly, before any feature list.
+        purpose sheet. what a phone number adds to an agent, before any provider or feature list.
       </BriefNote>
 
       <StripLabel>purpose</StripLabel>
       <BigHeading>
-        delegate
+        let the agent
         <br />
-        the presence.
+        answer.
       </BigHeading>
 
       <DocBox label="statement">
         <Prose>
           <p>
-            prixy exists because presence and information got bundled together. to know one thing
-            said in a call, you have to give up the whole hour the call takes.
+            agents can already work inside chat windows and tools. heyphony exists to connect that
+            intelligence to the ordinary number people and services already know how to call or text.
           </p>
-          <PullQuote>go on my behalf. bring back the thing i asked for.</PullQuote>
+          <PullQuote>one number. one agent. one message at a time.</PullQuote>
           <p>
-            the purpose is not to process more meetings. it is to make attending optional when
-            attending was never the point.
+            the purpose is not more outbound noise. it is a durable, inspectable communication
+            surface that an agent can read first and act on only when allowed.
           </p>
         </Prose>
       </DocBox>

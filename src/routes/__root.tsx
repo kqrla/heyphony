@@ -19,7 +19,7 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold">page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           the page you're looking for doesn't exist or has been moved.
         </p>
@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "prixy" },
-      { name: "description", content: "your personal presence proxy." },
-      { name: "author", content: "prixy" },
-      { property: "og:title", content: "prixy" },
-      { property: "og:description", content: "your personal presence proxy." },
+      { title: "heyphony" },
+      { name: "description", content: "a phone number for your ai agent." },
+      { name: "author", content: "heyphony" },
+      { property: "og:title", content: "heyphony" },
+      { property: "og:description", content: "a phone number for your ai agent." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
