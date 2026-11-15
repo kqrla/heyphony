@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { GitBranch, Inbox, ListFilter, Phone, Radio, Search, Server, ShieldCheck, Smartphone, Workflow } from "lucide-react";
 import {
   BigHeading,
@@ -121,23 +121,29 @@ function BranchesPage() {
         ]}
       />
 
-      <StripLabel>designed, not delivered</StripLabel>
+      <div className="flex flex-wrap gap-4 border-x border-b border-primary px-4 py-4 text-xs text-primary">
+        <Link to="/capabilities/allowlist" className="underline underline-offset-4">allowlist</Link>
+        <Link to="/capabilities/lookup" className="underline underline-offset-4">lookup</Link>
+        <Link to="/capabilities/forwarding" className="underline underline-offset-4">forwarding</Link>
+        <Link to="/capabilities/callheavy" className="underline underline-offset-4">callheavy</Link>
+        <Link to="/capabilities/cloudmobile" className="underline underline-offset-4">cloudmobile</Link>
+      </div>
+
+      <StripLabel>clawtel and future service</StripLabel>
       <CellGrid
         columns={3}
         items={[
           {
             title: "omni",
-            description: "nine non-telephony lanes with shared envelopes and gates. intake and normalization code exists, but every lane is marked designed.",
+            description: "omnichannel communication already works through clawtel; distinguish that delivery from the standalone heyphony branch.",
             icon: <ListFilter size={18} />,
-            marker: "designed",
-            muted: true,
+            marker: "working through clawtel",
           },
           {
             title: "meetings",
-            description: "zoom, google meet, and teams join plans and token work. the branch explicitly says nothing joins a meeting yet.",
+            description: "meetings already work through clawtel; the standalone heyphony branch is not the delivery surface.",
             icon: <Phone size={18} />,
-            marker: "designed",
-            muted: true,
+            marker: "working through clawtel",
           },
           {
             title: "hosted service",

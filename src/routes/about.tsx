@@ -91,7 +91,8 @@ function AboutPage() {
           <p>
             other branches explore policy, lookup, calling, deployment, forwarding, devices,
             omnichannel intake, and meetings. they are not all equally complete, and this site labels
-            them accordingly.
+            them accordingly. meetings and omni already work through clawtel, separately from the
+            standalone heyphony branch code.
           </p>
         </Prose>
       </DocBox>

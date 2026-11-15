@@ -57,9 +57,9 @@ const stages = [
       "move from local audio and simulated ring proofs toward real registered calls, reliable handoffs, and clearly bounded android or ios support.",
   },
   {
-    title: "later / omnichannel and meetings",
+    title: "available / omnichannel and meetings through clawtel",
     description:
-      "omni and meetings remain designs until actual deliveries and room joins are demonstrated. they should not be promoted by adding more marketing copy.",
+      "omni and meetings already work through clawtel. distinguish this working delivery surface from the standalone heyphony branches.",
   },
 ];
 

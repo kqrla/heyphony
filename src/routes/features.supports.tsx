@@ -175,9 +175,8 @@ function SupportsPage() {
 
       <DocBox label="not baseline support" filled>
         <p className="text-sm leading-relaxed">
-          zoom, google meet, teams, whatsapp, slack, discord, and streaming lanes belong to designed
-          meeting or omni branches, not to main's working telephone inbox. mobile calling is also
-          experimental rather than delivered.
+          meetings and omni already work through clawtel, separately from main's telephone inbox.
+          mobile calling remains experimental rather than delivered.
         </p>
       </DocBox>
 

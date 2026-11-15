@@ -146,12 +146,18 @@ const sections: { id: string; title: string; columns?: 2 | 3; items: CoverageIte
     ],
   },
   {
-    id: "designed",
-    title: "designed, not delivered",
+    id: "clawtel",
+    title: "working through clawtel",
     items: [
-      { name: "zoom / google meet / teams", status: "designed" },
-      { name: "omni email and messaging lanes", status: "designed" },
-      { name: "omni meetings and streaming", status: "designed" },
+      { name: "meetings", status: "working through clawtel", note: "meeting delivery is available through clawtel, rather than the standalone heyphony branch." },
+      { name: "omni", status: "working through clawtel", note: "omnichannel communication is available through clawtel, rather than the standalone heyphony branch." },
+    ],
+    columns: 2,
+  },
+  {
+    id: "designed",
+    title: "still ahead",
+    items: [
       { name: "hosted heyphony service", status: "planned" },
       { name: "one-command voicemail delivery", status: "planned" },
       { name: "automatic forwarding configuration", status: "designed" },

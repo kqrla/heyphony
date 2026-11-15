@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BranchesRouteImport } from './routes/branches'
+import { Route as CloudRouteImport } from './routes/cloud'
 import { Route as CoverageRouteImport } from './routes/coverage'
 import { Route as HowItRunsRouteImport } from './routes/how-it-runs'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
@@ -19,6 +20,12 @@ import { Route as ProblemRouteImport } from './routes/problem'
 import { Route as PurposeRouteImport } from './routes/purpose'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as SuiteRouteImport } from './routes/suite'
+import { Route as CapabilitiesIndexRouteImport } from './routes/capabilities.index'
+import { Route as CapabilitiesAllowlistRouteImport } from './routes/capabilities.allowlist'
+import { Route as CapabilitiesCallheavyRouteImport } from './routes/capabilities.callheavy'
+import { Route as CapabilitiesCloudmobileRouteImport } from './routes/capabilities.cloudmobile'
+import { Route as CapabilitiesForwardingRouteImport } from './routes/capabilities.forwarding'
+import { Route as CapabilitiesLookupRouteImport } from './routes/capabilities.lookup'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesCapabilitiesRouteImport } from './routes/features.capabilities'
 import { Route as FeaturesSupportsRouteImport } from './routes/features.supports'
@@ -36,6 +43,11 @@ const AboutRoute = AboutRouteImport.update({
 const BranchesRoute = BranchesRouteImport.update({
   id: '/branches',
   path: '/branches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CloudRoute = CloudRouteImport.update({
+  id: '/cloud',
+  path: '/cloud',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoverageRoute = CoverageRouteImport.update({
@@ -73,6 +85,36 @@ const SuiteRoute = SuiteRouteImport.update({
   path: '/suite',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CapabilitiesIndexRoute = CapabilitiesIndexRouteImport.update({
+  id: '/capabilities/',
+  path: '/capabilities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesAllowlistRoute = CapabilitiesAllowlistRouteImport.update({
+  id: '/capabilities/allowlist',
+  path: '/capabilities/allowlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesCallheavyRoute = CapabilitiesCallheavyRouteImport.update({
+  id: '/capabilities/callheavy',
+  path: '/capabilities/callheavy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesCloudmobileRoute = CapabilitiesCloudmobileRouteImport.update({
+  id: '/capabilities/cloudmobile',
+  path: '/capabilities/cloudmobile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesForwardingRoute = CapabilitiesForwardingRouteImport.update({
+  id: '/capabilities/forwarding',
+  path: '/capabilities/forwarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesLookupRoute = CapabilitiesLookupRouteImport.update({
+  id: '/capabilities/lookup',
+  path: '/capabilities/lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeaturesIndexRoute = FeaturesIndexRouteImport.update({
   id: '/features/',
   path: '/features/',
@@ -93,6 +135,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/branches': typeof BranchesRoute
+  '/cloud': typeof CloudRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -100,14 +143,21 @@ export interface FileRoutesByFullPath {
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
   '/suite': typeof SuiteRoute
+  '/capabilities/allowlist': typeof CapabilitiesAllowlistRoute
+  '/capabilities/callheavy': typeof CapabilitiesCallheavyRoute
+  '/capabilities/cloudmobile': typeof CapabilitiesCloudmobileRoute
+  '/capabilities/forwarding': typeof CapabilitiesForwardingRoute
+  '/capabilities/lookup': typeof CapabilitiesLookupRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
+  '/capabilities/': typeof CapabilitiesIndexRoute
   '/features/': typeof FeaturesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/branches': typeof BranchesRoute
+  '/cloud': typeof CloudRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -115,8 +165,14 @@ export interface FileRoutesByTo {
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
   '/suite': typeof SuiteRoute
+  '/capabilities/allowlist': typeof CapabilitiesAllowlistRoute
+  '/capabilities/callheavy': typeof CapabilitiesCallheavyRoute
+  '/capabilities/cloudmobile': typeof CapabilitiesCloudmobileRoute
+  '/capabilities/forwarding': typeof CapabilitiesForwardingRoute
+  '/capabilities/lookup': typeof CapabilitiesLookupRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
+  '/capabilities': typeof CapabilitiesIndexRoute
   '/features': typeof FeaturesIndexRoute
 }
 export interface FileRoutesById {
@@ -124,6 +180,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/branches': typeof BranchesRoute
+  '/cloud': typeof CloudRoute
   '/coverage': typeof CoverageRoute
   '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
@@ -131,8 +188,14 @@ export interface FileRoutesById {
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
   '/suite': typeof SuiteRoute
+  '/capabilities/allowlist': typeof CapabilitiesAllowlistRoute
+  '/capabilities/callheavy': typeof CapabilitiesCallheavyRoute
+  '/capabilities/cloudmobile': typeof CapabilitiesCloudmobileRoute
+  '/capabilities/forwarding': typeof CapabilitiesForwardingRoute
+  '/capabilities/lookup': typeof CapabilitiesLookupRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
+  '/capabilities/': typeof CapabilitiesIndexRoute
   '/features/': typeof FeaturesIndexRoute
 }
 export interface FileRouteTypes {
@@ -141,6 +204,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/branches'
+    | '/cloud'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -148,14 +212,21 @@ export interface FileRouteTypes {
     | '/purpose'
     | '/roadmap'
     | '/suite'
+    | '/capabilities/allowlist'
+    | '/capabilities/callheavy'
+    | '/capabilities/cloudmobile'
+    | '/capabilities/forwarding'
+    | '/capabilities/lookup'
     | '/features/capabilities'
     | '/features/supports'
+    | '/capabilities/'
     | '/features/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/branches'
+    | '/cloud'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -163,14 +234,21 @@ export interface FileRouteTypes {
     | '/purpose'
     | '/roadmap'
     | '/suite'
+    | '/capabilities/allowlist'
+    | '/capabilities/callheavy'
+    | '/capabilities/cloudmobile'
+    | '/capabilities/forwarding'
+    | '/capabilities/lookup'
     | '/features/capabilities'
     | '/features/supports'
+    | '/capabilities'
     | '/features'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/branches'
+    | '/cloud'
     | '/coverage'
     | '/how-it-runs'
     | '/philosophy'
@@ -178,8 +256,14 @@ export interface FileRouteTypes {
     | '/purpose'
     | '/roadmap'
     | '/suite'
+    | '/capabilities/allowlist'
+    | '/capabilities/callheavy'
+    | '/capabilities/cloudmobile'
+    | '/capabilities/forwarding'
+    | '/capabilities/lookup'
     | '/features/capabilities'
     | '/features/supports'
+    | '/capabilities/'
     | '/features/'
   fileRoutesById: FileRoutesById
 }
@@ -187,6 +271,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BranchesRoute: typeof BranchesRoute
+  CloudRoute: typeof CloudRoute
   CoverageRoute: typeof CoverageRoute
   HowItRunsRoute: typeof HowItRunsRoute
   PhilosophyRoute: typeof PhilosophyRoute
@@ -194,8 +279,14 @@ export interface RootRouteChildren {
   PurposeRoute: typeof PurposeRoute
   RoadmapRoute: typeof RoadmapRoute
   SuiteRoute: typeof SuiteRoute
+  CapabilitiesAllowlistRoute: typeof CapabilitiesAllowlistRoute
+  CapabilitiesCallheavyRoute: typeof CapabilitiesCallheavyRoute
+  CapabilitiesCloudmobileRoute: typeof CapabilitiesCloudmobileRoute
+  CapabilitiesForwardingRoute: typeof CapabilitiesForwardingRoute
+  CapabilitiesLookupRoute: typeof CapabilitiesLookupRoute
   FeaturesCapabilitiesRoute: typeof FeaturesCapabilitiesRoute
   FeaturesSupportsRoute: typeof FeaturesSupportsRoute
+  CapabilitiesIndexRoute: typeof CapabilitiesIndexRoute
   FeaturesIndexRoute: typeof FeaturesIndexRoute
 }
 
@@ -220,6 +311,13 @@ declare module '@tanstack/react-router' {
       path: '/branches'
       fullPath: '/branches'
       preLoaderRoute: typeof BranchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cloud': {
+      id: '/cloud'
+      path: '/cloud'
+      fullPath: '/cloud'
+      preLoaderRoute: typeof CloudRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coverage': {
@@ -271,6 +369,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SuiteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/capabilities/': {
+      id: '/capabilities/'
+      path: '/capabilities'
+      fullPath: '/capabilities/'
+      preLoaderRoute: typeof CapabilitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/allowlist': {
+      id: '/capabilities/allowlist'
+      path: '/capabilities/allowlist'
+      fullPath: '/capabilities/allowlist'
+      preLoaderRoute: typeof CapabilitiesAllowlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/callheavy': {
+      id: '/capabilities/callheavy'
+      path: '/capabilities/callheavy'
+      fullPath: '/capabilities/callheavy'
+      preLoaderRoute: typeof CapabilitiesCallheavyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/cloudmobile': {
+      id: '/capabilities/cloudmobile'
+      path: '/capabilities/cloudmobile'
+      fullPath: '/capabilities/cloudmobile'
+      preLoaderRoute: typeof CapabilitiesCloudmobileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/forwarding': {
+      id: '/capabilities/forwarding'
+      path: '/capabilities/forwarding'
+      fullPath: '/capabilities/forwarding'
+      preLoaderRoute: typeof CapabilitiesForwardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/lookup': {
+      id: '/capabilities/lookup'
+      path: '/capabilities/lookup'
+      fullPath: '/capabilities/lookup'
+      preLoaderRoute: typeof CapabilitiesLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/features/': {
       id: '/features/'
       path: '/features'
@@ -299,6 +439,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BranchesRoute: BranchesRoute,
+  CloudRoute: CloudRoute,
   CoverageRoute: CoverageRoute,
   HowItRunsRoute: HowItRunsRoute,
   PhilosophyRoute: PhilosophyRoute,
@@ -306,8 +447,14 @@ const rootRouteChildren: RootRouteChildren = {
   PurposeRoute: PurposeRoute,
   RoadmapRoute: RoadmapRoute,
   SuiteRoute: SuiteRoute,
+  CapabilitiesAllowlistRoute: CapabilitiesAllowlistRoute,
+  CapabilitiesCallheavyRoute: CapabilitiesCallheavyRoute,
+  CapabilitiesCloudmobileRoute: CapabilitiesCloudmobileRoute,
+  CapabilitiesForwardingRoute: CapabilitiesForwardingRoute,
+  CapabilitiesLookupRoute: CapabilitiesLookupRoute,
   FeaturesCapabilitiesRoute: FeaturesCapabilitiesRoute,
   FeaturesSupportsRoute: FeaturesSupportsRoute,
+  CapabilitiesIndexRoute: CapabilitiesIndexRoute,
   FeaturesIndexRoute: FeaturesIndexRoute,
 }
 export const routeTree = rootRouteImport
