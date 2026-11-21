@@ -135,7 +135,7 @@ export function SiteShell() {
                   rel="noopener noreferrer"
                   className="mt-4 inline-block border-b border-primary text-[10px] uppercase tracking-[0.12em] text-primary"
                 >
-                  read the source on github
+                  SOURCE AVAILBLE ON GITHUB
                 </a>
               </div>
               <nav aria-label="footer navigation" className="grid grid-cols-2 sm:grid-cols-3">
