@@ -81,7 +81,7 @@ export function SiteShell() {
           </div>
           <div className="hidden flex-col justify-center border-r border-primary px-3 py-1.5 md:flex">
             <div className="text-[9px] uppercase tracking-[0.18em] text-primary opacity-55">status</div>
-            <div className="text-xs text-foreground">source-available</div>
+            <div className="text-xs text-foreground">available in alpha</div>
           </div>
           <div className="hidden flex-col justify-center px-3 py-1.5 md:flex">
             <div className="text-[9px] uppercase tracking-[0.18em] text-primary opacity-55">doc</div>
