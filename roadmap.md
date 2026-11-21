@@ -2,18 +2,19 @@
 
 ## current work
 
-- [ ] add five dedicated branch capability pages, without branch mentions on the capabilities overview
-- [ ] add a directly accessible, unlinked coming-soon Cloud page with the two requested offerings
-- [ ] correct meetings and omni status to working through Clawtel across existing pages
-- [ ] verify the new pages, navigation isolation, and routing tests; commit this request
+- [x] add five dedicated branch capability pages, without branch mentions on the capabilities overview
+- [x] add a directly accessible, unlinked coming-soon Cloud page with the two requested offerings
+- [x] correct meetings and omni status to working through Clawtel across existing pages
+- [x] verify the new pages, navigation isolation, and routing tests; commit this request
+- [x] remove the leftover Prixy suite page and verify Heyphony reading on desktop and mobile
 
 - [x] review Heyphony code and prose across all ten public branches
 - [x] record migration capabilities and source limitations
-- [ ] adapt the ruled-document shell and all page content to Heyphony
-- [ ] add the exact required philosophy statement
-- [ ] distinguish main, MCP, implemented branches, and designed experiments
-- [ ] update route metadata and branch navigation
-- [ ] verify routing, build output, and the central reading flow in the preview
+- [x] adapt the ruled-document shell and all page content to Heyphony
+- [x] add the exact required philosophy statement
+- [x] distinguish main, MCP, implemented branches, and designed experiments
+- [x] update route metadata and branch navigation
+- [x] verify routing, build output, and the central reading flow in the preview
 
 ## content rules
 

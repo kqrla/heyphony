@@ -14,7 +14,14 @@ describe("App routing", () => {
 
       const matches = router.matchRoutes(path);
 
-      expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
+      const expectedRouteId = path === "/capabilities" || path === "/features" ? `${path}/` : path;
+      expect(matches.at(-1)?.routeId).toBe(expectedRouteId);
     },
   );
+
+  it("does not expose the former Prixy suite as a content route", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes("/suite").at(-1)?.routeId).toBe(rootRouteId);
+  });
 });
