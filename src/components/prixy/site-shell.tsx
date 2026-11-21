@@ -125,7 +125,7 @@ export function SiteShell() {
             <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2fr]">
               <div className="border-b border-primary px-4 py-5 md:border-b-0 md:border-r">
                 <Link to="/" className="font-display text-3xl font-black text-primary">heyphony</Link>
-                <div className="mt-1 text-xs text-muted-foreground">a phone number for your ai agent</div>
+                <div className="mt-1 text-xs text-muted-foreground">give your ai agent a number to keep.</div>
                 <p className="mt-3 max-w-xs text-xs leading-relaxed text-muted-foreground">
                   giving ai agents their dedicated phone number to keep and use across services to unlock everything for an agent that comes via access to telecom infra that was made for humans in mind alone.
                 </p>
