@@ -90,8 +90,7 @@ function Index() {
       />
 
       <BriefNote>
-        heyphony is a self-hosted, cli-first toolkit for giving your ai agent a phone number of its
-        own. it brings texts, call history, and voicemail into a local, agent-readable workflow.
+        heyphony gives your ai agents a dedicated phone number it can keep and use across services and platforms by adopting, adapting and augmenting existing battle tested telecom infra for agentic use.
       </BriefNote>
 
       <StripLabel>the phone number</StripLabel>
