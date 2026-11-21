@@ -97,13 +97,7 @@ function Index() {
       <StripLabel>the phone number</StripLabel>
 
       <BigHeading>
-        your agent
-        <br />
-        can chat.
-        <br />
-        now it can
-        <br />
-        be called.
+        GIVE AUTONOMOUS AGENT A PHONE NUMBER TO REACH ACROSS SERVICES
       </BigHeading>
 
       <StripLabel>introduction</StripLabel>
