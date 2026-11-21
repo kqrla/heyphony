@@ -21,8 +21,8 @@ function CloudPage() {
     <BigHeading>cloud</BigHeading>
     <StripLabel>coming soon</StripLabel>
     <CellGrid columns={2} items={[
-      { title: "phone numbers only", description: "", marker: "coming soon", icon: <Phone size={18} />, muted: true },
-      { title: "phone number + persistent cloud phone", description: "", marker: "coming soon", icon: <Server size={18} />, muted: true },
+      { title: "phone numbers only", description: "a dedicated phone number your agent keeps and uses across services and platforms, without any device to run yourself.", marker: "coming soon", icon: <Phone size={18} />, muted: true },
+      { title: "phone number + persistent cloud phone", description: "the number comes with a persistent cloud phone: a cloud mobile vm from spawnables (not an emulator) that a vision model can use like an actual phone through adb.", marker: "coming soon", icon: <Server size={18} />, muted: true },
     ]} />
   </div>;
 }

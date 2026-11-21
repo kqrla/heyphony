@@ -91,7 +91,7 @@ function ProblemPage() {
           { label: "document", value: "problem" },
           { label: "type", value: "problem statement" },
           { label: "issue", value: "001" },
-          { label: "status", value: "source-available" },
+          { label: "status", value: "available in alpha" },
         ]}
       />
 

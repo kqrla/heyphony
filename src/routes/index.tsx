@@ -85,7 +85,7 @@ function Index() {
           { label: "document", value: "index" },
           { label: "type", value: "agent phone toolkit" },
           { label: "issue", value: "001" },
-          { label: "status", value: "source-available" },
+          { label: "status", value: "available in alpha" },
         ]}
       />
 

@@ -57,7 +57,7 @@ function PurposePage() {
           { label: "document", value: "purpose" },
           { label: "type", value: "intent statement" },
           { label: "issue", value: "001" },
-          { label: "status", value: "source-available" },
+          { label: "status", value: "available in alpha" },
         ]}
       />
 
